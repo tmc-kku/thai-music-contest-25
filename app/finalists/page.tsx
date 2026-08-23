@@ -11,6 +11,16 @@ import contestantsData from '@/data/contestants.json'
 // Filter out any invalid data entries first at the top level
 const data = contestantsData.filter(d => d.name && d.level && d.category && d.school);
 
+const competitionRooms: Record<string, string> = {
+  'ประถมศึกษา|ขับร้อง': 'FAG 1',
+  'ประถมศึกษา|จะเข้': 'PAS 2',
+  'มัธยมศึกษา|จะเข้': 'FAG 1',
+};
+
+function getCompetitionRoom(contestant: (typeof data)[number]) {
+  return competitionRooms[`${contestant.level}|${contestant.category}`] || contestant.room;
+}
+
 export default function FinalistsPage() {
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
@@ -158,10 +168,10 @@ export default function FinalistsPage() {
                         <FontAwesomeIcon icon={faSchool} className="text-ci-gold/70 w-4 mt-1" />
                         <span>{contestant.school}</span>
                       </p>
-                      {contestant.room && (
+                      {getCompetitionRoom(contestant) && (
                         <p className="flex items-center gap-3 text-white/80">
                           <FontAwesomeIcon icon={faDoorOpen} className="text-ci-gold/70 w-4" />
-                          <span>ห้องประกวด: {contestant.room}</span>
+                          <span>ห้องประกวด: {getCompetitionRoom(contestant)}</span>
                         </p>
                       )}
                     </div>
@@ -187,7 +197,7 @@ export default function FinalistsPage() {
                           <td className="p-4 text-center font-sarabun  text-white/70">{idx + 1}</td>
                           <td className="p-4 font-sarabun font-semibold text-white">{contestant.name}</td>
                           <td className="p-4 font-sarabun text-white/80">{contestant.school}</td>
-                          <td className="p-4 font-sarabun text-center text-white/70">{contestant.room || '-'}</td>
+                          <td className="p-4 font-sarabun text-center text-white/70">{getCompetitionRoom(contestant) || '-'}</td>
                         </tr>
                       ))}
                     </tbody>
