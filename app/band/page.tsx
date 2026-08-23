@@ -25,34 +25,7 @@ export default function BandContestPage() {
     return availableContests.find(c => c.title === selectedContestTitle);
   }, [selectedContestTitle, availableContests]);
 
-  const sortedBands = useMemo(() => {
-    if (!selectedContest) return [];
-
-    const bandsCopy = [...selectedContest.bands];
-
-    // Sort bands with a more robust logic
-    bandsCopy.sort((a, b) => {
-      const aIsNum = typeof a.drawOrder === 'number';
-      const bIsNum = typeof b.drawOrder === 'number';
-
-      if (aIsNum && bIsNum) {
-        // If both are numbers, sort them numerically
-        return Number(a.drawOrder) - Number(b.drawOrder);
-      }
-      if (aIsNum) {
-        // If only 'a' is a number, it should come first
-        return -1;
-      }
-      if (bIsNum) {
-        // If only 'b' is a number, it should come first
-        return 1;
-      }
-      // If neither are numbers (e.g., both are "-"), keep original order
-      return 0;
-    });
-
-    return bandsCopy;
-  }, [selectedContest]);
+  const bands = selectedContest?.bands ?? [];
 
   return (
 
@@ -138,19 +111,23 @@ export default function BandContestPage() {
             <span>{selectedContest.drawInfo}</span>
           </div>
 
-          {sortedBands.length > 0 ? (
+          {bands.length > 0 ? (
             <div>
               {/* Mobile View: List of Cards (visible on screens smaller than md) */}
               <div className="grid gap-4 md:hidden">
-                {sortedBands.map((band, idx) => (
+                {bands.map((band, idx) => (
                   <div
                     key={band.name}
                     className="card p-4 backdrop-blur-sm bg-black/20 rounded-xl border border-white/5"
                   >
                     <div className="flex justify-between items-start">
                       <h4 className="font-bold text-ci-gold text-lg pr-4">{band.name}</h4>
-                      <span className="text-sm font-mono font-sarabun text-white/60 whitespace-nowrap">
-                        ลำดับที่ {band.drawOrder}
+                      <span
+                        className="flex h-7 w-7 items-center justify-center rounded-full border border-ci-gold/70 text-ci-gold"
+                        aria-label="รอจับสลากลำดับการแข่งขัน"
+                        title="รอจับสลากลำดับการแข่งขัน"
+                      >
+                        —
                       </span>
                     </div>
                     <div className="mt-3 space-y-2 text-sm">
@@ -180,13 +157,21 @@ export default function BandContestPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      {sortedBands.map((band, idx) => (
+                      {bands.map((band, idx) => (
                         <tr
                           key={band.name}
                           className="border-t font-sarabun border-white/10 hover:bg-white/10 transition-all duration-300 fade-in"
                           style={{ animationDelay: `${idx * 50}ms` }}
                         >
-                          <td className="p-4 font-bold text-center text-white">{band.drawOrder}</td>
+                          <td className="p-4 text-center">
+                            <span
+                              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-ci-gold/70 text-ci-gold"
+                              aria-label="รอจับสลากลำดับการแข่งขัน"
+                              title="รอจับสลากลำดับการแข่งขัน"
+                            >
+                              —
+                            </span>
+                          </td>
                           <td className="p-4 font-semibold text-white">{band.name}</td>
                           <td className="p-4 text-white/80">{band.school || '-'}</td>
                           <td className="p-4 text-white/70">{band.province}</td>
