@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-full h-2 bg-ci-gold/20 blur-xl"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-10">
           
           {/* Column 1: About & Logo */}
           <div className="lg:col-span-2 space-y-4">
@@ -58,6 +58,25 @@ export default function Footer() {
                   <FontAwesomeIcon icon={faEnvelope} className="text-ci-gold w-4" />
                   <a href="pburin@kku.ac.th" className="hover:text-ci-gold transition-colors">pburin@kku.ac.th</a>
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 4: Website Administrators */}
+          <div className="space-y-3">
+            <h3 className="text-lg font-sao font-bold text-ci-gold">ผู้ดูแลเว็บไซต์</h3>
+            <div className="space-y-3 text-sm text-white/80">
+              <div>
+                <p>นายญาณกร แสงชาติ</p>
+                <a href="mailto:yanakon.s@kkumail.com" className="break-all hover:text-ci-gold transition-colors">
+                  yanakon.s@kkumail.com
+                </a>
+              </div>
+              <div>
+                <p>นายศิริศักดิ์ วันเลิศ</p>
+                <a href="mailto:sirisak.wa@kkumail.com" className="break-all hover:text-ci-gold transition-colors">
+                  sirisak.wa@kkumail.com
+                </a>
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๕',
   description:
-    'เว็บไซต์ข้อมูลการประกวด ค้นหาผู้เข้าประกวด กำหนดการ แผนที่ การถ่ายทอดสด และผลการแข่งขัน',
+    'เว็บไซต์ข้อมูลการประกวด ค้นหาผู้เข้าประกวด กำหนดการ แผนที่ และการถ่ายทอดสด',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
