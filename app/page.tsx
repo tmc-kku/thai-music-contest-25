@@ -21,7 +21,7 @@ function CountdownTimer() {
   const [isEventStarted, setIsEventStarted] = useState(false);
 
   useEffect(() => {
-    const eventDate = new Date('2026-09-05T07:30:00+07:00');
+    const eventDate = new Date('2026-09-05T09:00:00+07:00');
 
     const updateCountdown = () => {
       const difference = eventDate.getTime() - Date.now();
@@ -74,7 +74,7 @@ function CountdownTimer() {
         <FontAwesomeIcon icon={faClock} className="text-xl" />
         นับถอยหลังสู่วันประกวด
       </h2>
-      <p className="text-center text-sm text-white/70">เริ่มการแข่งขัน ๕ กันยายน ๒๕๖๙ เวลา ๐๗.๓๐ น.</p>
+      <p className="text-center text-sm text-white/70">เริ่มการแข่งขัน ๕ กันยายน ๒๕๖๙ เวลา ๐๙.๐๐ น.</p>
 
       <div className="max-w-4xl mx-auto backdrop-blur-sm bg-black/30 p-4 sm:p-6 md:p-8 rounded-xl shadow-2xl border border-white/10 hover:border-ci-gold/30 transition-all duration-500">
         <div className="grid grid-flow-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-center auto-cols-max items-center justify-center">
