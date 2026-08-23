@@ -28,7 +28,7 @@ type Room = {
 
 const saturdayRooms: Room[] = [
   {
-    name: "ห้องที่ ๑",
+    name: "FA Theater",
     location: "โรงละครคณะศิลปกรรมศาสตร์",
     events: [
       { time: "๐๙.๐๐ – ๑๐.๐๐ น.", text: "ระนาดทุ้ม มัธยมศึกษา", icon: faMusic },
@@ -43,7 +43,7 @@ const saturdayRooms: Room[] = [
     ],
   },
   {
-    name: "ห้องที่ ๒",
+    name: "PAS 1",
     location: "ห้อง PAS 1",
     events: [
       { time: "๐๙.๐๐ – ๑๐.๐๐ น.", text: "ซอด้วง มัธยมศึกษา", icon: faMusic },
@@ -54,7 +54,7 @@ const saturdayRooms: Room[] = [
     ],
   },
   {
-    name: "ห้องที่ ๓",
+    name: "PAS 2",
     location: "ห้อง PAS 2",
     events: [
       { time: "๐๙.๐๐ – ๑๐.๓๐ น.", text: "ขิม ประถมศึกษา", icon: faMusic },
@@ -64,7 +64,7 @@ const saturdayRooms: Room[] = [
     ],
   },
   {
-    name: "ห้องที่ ๔",
+    name: "FAG 1",
     location: "ห้อง FAG 1",
     events: [
       { time: "๐๙.๐๐ – ๑๐.๓๐ น.", text: "ขับร้อง ประถมศึกษา", icon: faMusic },
