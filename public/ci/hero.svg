@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4b174c"/>
+      <stop offset="1" stop-color="#752f77"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="180" rx="22" fill="url(#g)"/>
+  <g fill="#f8e333">
+    <circle cx="60" cy="90" r="30" opacity="0.9"/>
+    <rect x="110" y="70" width="160" height="40" rx="8" opacity="0.9"/>
+  </g>
+  <text x="120" y="95" font-size="12" fill="#0a0a0a">CI Demo Graphic</text>
+</svg>
