@@ -90,7 +90,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-4">
             <a 
-              href="https://www.facebook.com/share/19FcHvoxj1/?mibextid=wwXIfr" 
+              href="https://www.facebook.com/share/1F2TZVuPaq/" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Facebook Page"
