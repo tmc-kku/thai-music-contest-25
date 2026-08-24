@@ -150,7 +150,7 @@ export default function Schedule() {
   ];
 
   const sundayEvents: Event[] = [
-    { time: "๐๗.๓๐ – ๐๘.๐๐ น.", text: "ลงทะเบียนวงที่เข้าประกวดทุกรายการ", icon: faUser },
+    { time: "๐๗.๓๐ – ๐๘.๓๐ น.", text: "ลงทะเบียนวงที่เข้าประกวดทุกรายการ", icon: faUser },
     { time: "๐๘.๓๐ – ๐๘.๔๕ น.", text: "การบรรเลงเพลงถวายอาลัย", icon: faMusic },
     { time: "๐๘.๔๕ – ๐๘.๕๐ น.", text: "การจับฉลากลำดับการประกวด", icon: faUser },
     {
