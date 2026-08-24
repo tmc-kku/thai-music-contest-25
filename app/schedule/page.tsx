@@ -34,7 +34,7 @@ const saturdayRooms: Room[] = [
       { time: "๐๙.๐๐ – ๑๐.๐๐ น.", text: "ระนาดทุ้ม มัธยมศึกษา", icon: faMusic },
       { time: "๑๐.๐๐ – ๑๑.๐๐ น.", text: "ระนาดเอก มัธยมศึกษา", icon: faMusic },
       { time: "๑๑.๐๐ – ๑๒.๐๐ น.", text: "ฆ้องวงเล็ก มัธยมศึกษา", icon: faMusic },
-      { time: "๑๓.๐๐ – ๑๔.๓๐ น.", text: "ระนาดเอก มัธยมศึกษา", icon: faMusic },
+      { time: "๑๓.๐๐ – ๑๔.๓๐ น.", text: "ปี่พาทย์ผสมเครื่องสาย มัธยมศึกษา", icon: faMusic },
       {
         time: "๑๔.๓๐ – ๑๗.๐๐ น.",
         text: "วงเครื่องสายเครื่องเดี่ยว มัธยมศึกษา",
@@ -67,7 +67,7 @@ const saturdayRooms: Room[] = [
     name: "FAG 1",
     location: "ห้อง FAG 1",
     events: [
-      { time: "๐๙.๐๐ – ๑๐.๓๐ น.", text: "ขับร้อง ประถมศึกษา", icon: faMusic },
+      { time: "๐๙.๐๐ – ๑๐.๓๐ น.", text: "ขับร้อง มัธยมศึกษา", icon: faMusic },
       { time: "๑๐.๓๐ – ๑๒.๐๐ น.", text: "จะเข้ มัธยมศึกษา", icon: faMusic },
       { time: "๑๓.๐๐ – ๑๔.๐๐ น.", text: "ขับร้อง ประถมศึกษา", icon: faMusic },
     ],
@@ -128,6 +128,16 @@ export default function Schedule() {
       time: "๑๒.๐๐ – ๑๓.๐๐ น.",
       text: "พักรับประทานอาหารกลางวัน",
       icon: faUtensils,
+    },
+    {
+      time: "๑๓.๐๐ – ๑๔.๓๐ น.",
+      text: "การประกวดเดี่ยวเครื่องดนตรีไทย ระดับประถมศึกษาและมัธยมศึกษา",
+      icon: faMusic,
+    },
+    {
+      time: "๑๔.๓๐ – ๑๗.๐๐ น.",
+      text: "การประกวดปี่พาทย์ผสมเครื่องสาย ระดับมัธยมศึกษา",
+      icon: faMusic,
     },
     {
       time: "๑๗.๐๐ – ๑๗.๓๐ น.",

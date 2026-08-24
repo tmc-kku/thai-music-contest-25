@@ -17,8 +17,14 @@ const competitionRooms: Record<string, string> = {
   'มัธยมศึกษา|จะเข้': 'FAG 1',
 };
 
+const secondaryCategoryOrder = [
+  'ซอสามสาย', 'ซอด้วง', 'ซออู้', 'จะเข้',
+  'ขลุ่ยเพียงออ', 'ระนาดเอก', 'ระนาดทุ้ม',
+  'ฆ้องวงใหญ่', 'ฆ้องวงเล็ก', 'ขับร้อง',
+];
+
 function getCompetitionRoom(contestant: (typeof data)[number]) {
-  return competitionRooms[`${contestant.level}|${contestant.category}`] || contestant.room;
+  return competitionRooms[`${contestant.level}|${contestant.category}`] || (contestant.room === 'FAG' ? 'FAG 1' : contestant.room);
 }
 
 export default function FinalistsPage() {
@@ -32,6 +38,10 @@ export default function FinalistsPage() {
       data
         .filter(d => d.level === selectedLevel)
         .map(d => d.category)
+        .sort((first, second) => {
+          if (selectedLevel !== 'มัธยมศึกษา') return 0;
+          return secondaryCategoryOrder.indexOf(first) - secondaryCategoryOrder.indexOf(second);
+        })
     ));
   }, [selectedLevel]);
 
