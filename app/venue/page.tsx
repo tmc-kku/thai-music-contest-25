@@ -17,7 +17,7 @@ export default function VenuePage() {
 
   const floorPlan = {
     title: "ผังห้องประกวด",
-    description: "โรงละครคณะศิลปกรรมศาสตร์, PAS1, PAS2 และ FAG",
+    description: "โรงละครคณะศิลปกรรมศาสตร์, PAS 1, PAS 2 และ FAG 1",
     imageSrc: "/venue/room-plan.png"
   };
 

@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faGraduationCap, faChevronRight, faListCheck, faInfoCircle, faSchool, faMapPin } from "@fortawesome/free-solid-svg-icons";
 import allContests from '@/data/band.json';
 
+const contestOrder = ['วงเครื่องสายเครื่องเดี่ยว', 'วงเครื่องสายประสมปี่พาทย์'];
+
 export default function BandContestPage() {
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [selectedContestTitle, setSelectedContestTitle] = useState<string | null>(null);
@@ -16,7 +18,9 @@ export default function BandContestPage() {
 
   const availableContests = useMemo(() => {
     if (!selectedLevel) return [];
-    return allContests.filter(c => c.level === selectedLevel);
+    return allContests
+      .filter(c => c.level === selectedLevel)
+      .sort((first, second) => contestOrder.indexOf(first.title) - contestOrder.indexOf(second.title));
   }, [selectedLevel]);
 
   const selectedContest = useMemo(() => {
