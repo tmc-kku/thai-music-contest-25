@@ -107,6 +107,17 @@ function CountdownTimer() {
   )
 }
 
+{/* Curved marquee */}
+<section className="section">
+  <CurvedLoop
+    marqueeText="การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๕ — ยินดีต้อนรับ"
+    speed={1.5}
+    curveAmount={380}
+    className="text-ci-gold"
+    direction="left"
+  />
+</section>
+
 export default function Home() {
   const [index, setIndex] = useState(0)
 
