@@ -17,11 +17,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/ci/favicon.png" />
         <meta name="theme-color" content="#4b174c" />
       </head>
-      <body className="min-h-screen flex flex-col bg-gradient-to-b from-ci-purple to-ci-plum text-white font-sao">
-        <Header />
-        <main className="flex-1 max-w-6xl mx-auto px-4 py-8">{children}</main>
-        <Footer />
-      </body>
+      <body className="relative min-h-screen flex flex-col bg-gradient-to-b from-ci-purple to-ci-plum text-white font-sao">
+  {/* animated background canvas (non-interactive) */}
+  <div className="darkveil-wrapper">
+    <DarkVeil
+      hueShift={280}            // tuned toward CI purple (#4b174c); adjust if needed
+      noiseIntensity={0.02}
+      scanlineIntensity={0.06}
+      speed={0.45}
+      scanlineFrequency={0.02}
+      warpAmount={0.02}
+      resolutionScale={1}
+    />
+  </div>
+
+  <Header />
+  <main className="flex-1 max-w-6xl mx-auto px-4 py-8">{children}</main>
+  <Footer />
+</body>
     </html>
   )
 }
