@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faCalendarAlt, faPlay, faMapMarkerAlt, faBullhorn } from '@fortawesome/free-solid-svg-icons'
+import CurvedLoop from '@/components/CurvedLoop'
 
 // รูปภาพสไลด์ (วางไฟล์ใน public/ci/gallery/)
 const images = [
