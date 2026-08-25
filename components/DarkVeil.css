@@ -1,0 +1,14 @@
+.darkveil-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* wrapper to place canvas behind content and ignore pointer events */
+.darkveil-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -10;
+}
