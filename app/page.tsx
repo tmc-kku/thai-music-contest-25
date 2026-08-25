@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faCalendarAlt, faPlay, faMapMarkerAlt, faBullhorn } from '@fortawesome/free-solid-svg-icons'
-import CurvedLoop from '@/components/CurvedLoop'
 
 // รูปภาพสไลด์ (วางไฟล์ใน public/ci/gallery/)
 const images = [
@@ -122,13 +121,13 @@ export default function Home() {
     {
       title: "การใช้ห้องซ้อมสำหรับผู้เข้าแข่งขัน",
       date: "25 ส.ค. 2568",
-      description: "ฝ่ายจัดการแข่งขันได้จัดเตรียมห้องซ้อมไว้ให้ผู้เข้าแข่งขัน ส[...]",
+      description: "ฝ่ายจัดการแข่งขันได้จัดเตรียมห้องซ้อมไว้ให้ผู้เข้าแข่งขัน สามารถติดต่อขอใช้ห้องได้ที่คณะทำงาน",
       href: "/venue"
     },
     {
       title: "กำหนดการจับสลากลำดับการแข่งขัน",
       date: "24 ส.ค. 2568",
-      description: "การจับสลากลำดับการแข่งขันสำหรับวงดนตรี จะมีขึ้นในวันที่ 7 ก.ย. [...]",
+      description: "การจับสลากลำดับการแข่งขันสำหรับวงดนตรี จะมีขึ้นในวันที่ 7 ก.ย. 2568 เวลา 08.30 น. ณ โรงละครคณะศิลปกรรมศาสตร์",
       href: "/band"
     }
   ];
@@ -144,22 +143,11 @@ export default function Home() {
             className="mx-auto max-h-48 object-contain bounce-in"
           />
           <h6 className="text-white/90 text-lg md:text-md slide-up font-kku leading-relaxed">
-            ถ้วยพระราชทานสมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชส��[...]
+            ถ้วยพระราชทานสมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ
             สยามบรมราชกุมารี<br />
-            และถ้วยประทานพระเจ้าวรวงศ์เธอ พระองค์เจ้าโสมสวลี กรมหมื่นสุทธน�[...]
+            และถ้วยประทานพระเจ้าวรวงศ์เธอ พระองค์เจ้าโสมสวลี กรมหมื่นสุทธนารีนาถ
           </h6>
         </div>
-
-        {/* Curved marquee */}
-        <section className="section">
-          <CurvedLoop
-            marqueeText="การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๕ — ยินดีต้อนรับ"
-            speed={1.5}
-            curveAmount={380}
-            className="text-ci-gold"
-            direction="left"
-          />
-        </section>
 
         {/* Countdown Section */}
         <div className="space-y-6">
@@ -276,7 +264,7 @@ export default function Home() {
           ติดตามงานแบบ Real-time
         </h2>
         <p className="text-white/80 text-lg">
-          สามารถติดตามข้อมูลการประกวดสดใหม่ตลอดเวลา ทั้งผ่านเว็บไซต์และช่อ[...]
+          สามารถติดตามข้อมูลการประกวดสดใหม่ตลอดเวลา ทั้งผ่านเว็บไซต์และช่องทางโซเชียลมีเดีย
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
           <a href="/live" className="btn btn-primary flex items-center justify-center gap-2">
