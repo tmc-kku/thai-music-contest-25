@@ -85,7 +85,7 @@ export default function Contact() {
                             ช่องทางออนไลน์
                         </h2>
                         <div className="pl-8 flex flex-wrap gap-3">
-                            <a href="https://www.facebook.com/KKUThaiMusicContest" 
+                            <a href="https://www.facebook.com/share/1F2TZVuPaq/" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                className="btn btn-secondary inline-flex items-center gap-2">
