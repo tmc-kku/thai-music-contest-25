@@ -171,7 +171,7 @@ export default function Home() {
       {/* Slideshow Section */}
       <section className="section container">
         <h4 className="text-center font-sao text-ci-gold fade-in margin-bottom-2" style={{ marginBottom: '1rem' }}>
-          ภาพบรรยากาศการประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๔
+          ภาพบรรยากาศการประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๕
         </h4>
         <div className="relative overflow-hidden rounded-lg shadow-lg group h-[300px] md:h-[500px]">
           {images.map((src, i) => (
