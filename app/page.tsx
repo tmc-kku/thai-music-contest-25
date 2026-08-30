@@ -58,7 +58,7 @@ function CountdownTimer() {
             ยินดีต้อนรับ
           </h2>
           <p className="text-xl font-bold text-white/90 font-sao">
-            สู่การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๕
+            สู่การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ 25
           </p>
           <p className="text-lg text-white/70">
             ณ คณะศิลปกรรมศาสตร์ มหาวิทยาลัยขอนแก่น
@@ -126,8 +126,8 @@ export default function Home() {
     },
     {
       title: "กำหนดการจับสลากลำดับการแข่งขัน",
-      date: "24 ส.ค. 2568",
-      description: "การจับสลากลำดับการแข่งขันสำหรับวงดนตรี จะมีขึ้นในวันที่ 7 ก.ย. 2568 เวลา 08.30 น. ณ โรงละครคณะศิลปกรรมศาสตร์",
+      date: "6 กันยายน 2569",
+      description: "การจับสลากลำดับการแข่งขันสำหรับวงดนตรี จะมีขึ้นในวันที่ 6 กันยายน 2569 เวลา 08.45 น. ณ โรงละครคณะศิลปกรรมศาสตร์",
       href: "/band"
     }
   ];
@@ -171,7 +171,7 @@ export default function Home() {
       {/* Slideshow Section */}
       <section className="section container">
         <h4 className="text-center font-sao text-ci-gold fade-in margin-bottom-2" style={{ marginBottom: '1rem' }}>
-          ภาพบรรยากาศการประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๕
+          ภาพบรรยากาศการประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ ครั้งที่ ๒๔
         </h4>
         <div className="relative overflow-hidden rounded-lg shadow-lg group h-[300px] md:h-[500px]">
           {images.map((src, i) => (
