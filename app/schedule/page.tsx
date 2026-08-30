@@ -259,6 +259,9 @@ export default function Schedule() {
             <FontAwesomeIcon icon={faFacebook} /> การถ่ายทอดสด
           </h2>
           <p className="mt-3 text-white/75">วันเสาร์ ถ่ายทอดสดแยกตามห้องประกวด</p>
+          <p className="mt-2 text-sm text-white/70">
+            ห้อง 1 = โรงละครคณะศิลปกรรมศาสตร์, ห้อง 2 = PAS 1, ห้อง 3 = PAS 2, ห้อง 4 = FAG 1
+          </p>
           <ul className="mt-3 space-y-2 text-white/80">
             {liveChannels.map((channel) => <li key={channel}>{channel}</li>)}
           </ul>
