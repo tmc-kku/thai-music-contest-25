@@ -7,11 +7,11 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 export default function LivePage() {
   const lives = [
-    { day: '5 กันยายน 2569', title: 'ห้องที่ 1: โรงละครคณะศิลปกรรมศาสตร์ | Facebook: การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ', url: 'https://www.facebook.com/profile.php?id=100057643420110' },
+    { day: '5 กันยายน 2569', title: 'ห้องที่ 1: โรงละคร | Facebook: การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ', url: 'https://www.facebook.com/profile.php?id=100057643420110' },
     { day: '5 กันยายน 2569', title: 'ห้องที่ 2: ห้อง PAS 1 | Facebook: Thai Music FA KKU', url: 'https://www.facebook.com/profile.php?id=100064752726252' },
     { day: '5 กันยายน 2569', title: 'ห้องที่ 3: ห้อง PAS 2 | Facebook: คณะศิลปกรรมศาสตร์ มหาวิทยาลัยขอนแก่น', url: 'https://www.facebook.com/FAKKUofficial' },
     { day: '5 กันยายน 2569', title: 'ห้องที่ 4: ห้อง FAG 1 | Facebook: Music Education KKU', url: 'https://www.facebook.com/profile.php?id=100083038366633' },
-    { day: '6 กันยายน 2569', title: 'ห้องประกวดหลัก: โรงละครคณะศิลปกรรมศาสตร์ | Facebook: การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ', url: 'https://www.facebook.com/profile.php?id=100057643420110' },
+    { day: '6 กันยายน 2569', title: 'ห้องประกวดหลัก: โรงละคร | Facebook: การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ', url: 'https://www.facebook.com/profile.php?id=100057643420110' },
   ];
 
   // Group live streams by day

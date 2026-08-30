@@ -82,10 +82,10 @@ const saturdayNotes = [
 ];
 
 const liveChannels = [
-  "ห้องที่ ๑: Facebook การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ",
-  "ห้องที่ ๒: Facebook Thai Music FA KKU",
-  "ห้องที่ ๓: Facebook คณะศิลปกรรมศาสตร์ มหาวิทยาลัยขอนแก่น",
-  "ห้องที่ ๔: Facebook Music Education KKU",
+  "ห้องที่ ๑: โรงละคร | Facebook: การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ",
+  "ห้องที่ ๒: ห้อง PAS 1 | Facebook: Thai Music FA KKU",
+  "ห้องที่ ๓: ห้อง PAS 2 | Facebook: คณะศิลปกรรมศาสตร์ มหาวิทยาลัยขอนแก่น",
+  "ห้องที่ ๔: ห้อง FAG 1 | Facebook: Music Education KKU",
 ];
 
 function EventRow({ event }: { event: Event }) {
@@ -259,18 +259,6 @@ export default function Schedule() {
             <FontAwesomeIcon icon={faFacebook} /> การถ่ายทอดสด
           </h2>
           <p className="mt-3 text-white/75">วันเสาร์ ถ่ายทอดสดแยกตามห้องประกวด</p>
-          <p className="mt-2 text-sm text-white/70">
-            ห้องที่ 1: โรงละครคณะศิลปกรรมศาสตร์ | Facebook: การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ
-          </p>
-          <p className="mt-1 text-sm text-white/70">
-            ห้องที่ 2: ห้อง PAS 1 | Facebook: Thai Music FA KKU
-          </p>
-          <p className="mt-1 text-sm text-white/70">
-            ห้องที่ 3: ห้อง PAS 2 | Facebook: คณะศิลปกรรมศาสตร์ มหาวิทยาลัยขอนแก่น
-          </p>
-          <p className="mt-1 text-sm text-white/70">
-            ห้องที่ 4: ห้อง FAG 1 | Facebook: Music Education KKU
-          </p>
           <ul className="mt-3 space-y-2 text-white/80">
             {liveChannels.map((channel) => <li key={channel}>{channel}</li>)}
           </ul>
