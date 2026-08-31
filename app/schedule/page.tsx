@@ -82,10 +82,10 @@ const saturdayNotes = [
 ];
 
 const liveChannels = [
-  "ห้องที่ ๑: โรงละคร | Facebook: การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ",
-  "ห้องที่ ๒: ห้อง PAS 1 | Facebook: Thai Music FA KKU",
-  "ห้องที่ ๓: ห้อง PAS 2 | Facebook: คณะศิลปกรรมศาสตร์ มหาวิทยาลัยขอนแก่น",
-  "ห้องที่ ๔: ห้อง FAG 1 | Facebook: Music Education KKU",
+  "ห้องที่ ๑: Facebook การประกวดดนตรีไทย ภาคตะวันออกเฉียงเหนือ",
+  "ห้องที่ ๒: Facebook Thai Music FA KKU",
+  "ห้องที่ ๓: Facebook คณะศิลปกรรมศาสตร์ มหาวิทยาลัยขอนแก่น",
+  "ห้องที่ ๔: Facebook Music Education KKU",
 ];
 
 function EventRow({ event }: { event: Event }) {

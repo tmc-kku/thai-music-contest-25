@@ -56,7 +56,7 @@ export default function Footer() {
                 </p>
                 <p className="flex items-center gap-3 text-sm text-white/80">
                   <FontAwesomeIcon icon={faEnvelope} className="text-ci-gold w-4" />
-                  <a href="pburin@kku.ac.th" className="hover:text-ci-gold transition-colors">pburin@kku.ac.th</a>
+                  <a href="mailto:tmc.pa.kku@gmail.com" className="hover:text-ci-gold transition-colors">tmc.pa.kku@gmail.com</a>
                 </p>
               </div>
             </div>
