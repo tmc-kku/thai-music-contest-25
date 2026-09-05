@@ -128,10 +128,10 @@ export default function BandContestPage() {
                       <h4 className="font-bold text-ci-gold text-lg pr-4">{band.name}</h4>
                       <span
                         className="flex h-7 w-7 items-center justify-center rounded-full border border-ci-gold/70 text-ci-gold"
-                        aria-label="รอจับสลากลำดับการแข่งขัน"
-                        title="รอจับสลากลำดับการแข่งขัน"
+                        aria-label={`ลำดับการแข่งขัน ${band.drawOrder}`}
+                        title={`ลำดับการแข่งขัน ${band.drawOrder}`}
                       >
-                        —
+                        {band.drawOrder}
                       </span>
                     </div>
                     <div className="mt-3 space-y-2 text-sm">
@@ -170,10 +170,10 @@ export default function BandContestPage() {
                           <td className="p-4 text-center">
                             <span
                               className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-ci-gold/70 text-ci-gold"
-                              aria-label="รอจับสลากลำดับการแข่งขัน"
-                              title="รอจับสลากลำดับการแข่งขัน"
+                              aria-label={`ลำดับการแข่งขัน ${band.drawOrder}`}
+                              title={`ลำดับการแข่งขัน ${band.drawOrder}`}
                             >
-                              —
+                              {band.drawOrder}
                             </span>
                           </td>
                           <td className="p-4 font-semibold text-white">{band.name}</td>
