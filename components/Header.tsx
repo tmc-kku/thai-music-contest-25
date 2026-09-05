@@ -34,6 +34,7 @@ export default function Header() {
           <NavLink href="/">หน้าแรก</NavLink>
           <NavLink href="/schedule">กำหนดการ</NavLink>
           <NavLink href="/finalists">รายชื่อผู้เข้ารอบ</NavLink>
+          <NavLink href="/result">ประกาศผล</NavLink>
           <NavLink href="/live">ถ่ายทอดสด</NavLink>
           <NavLink href="/venue">สถานที่</NavLink>
           <NavLink href="/contacts">ติดต่อ</NavLink>
@@ -67,6 +68,7 @@ export default function Header() {
             <NavLink href="/" onClick={() => setOpen(false)}>หน้าแรก</NavLink>
             <NavLink href="/schedule" onClick={() => setOpen(false)}>กำหนดการ</NavLink>
             <NavLink href="/finalists" onClick={() => setOpen(false)}>รายชื่อผู้เข้ารอบ</NavLink>
+            <NavLink href="/result" onClick={() => setOpen(false)}>ประกาศผล</NavLink>
             <NavLink href="/live" onClick={() => setOpen(false)}>ถ่ายทอดสด</NavLink>
             <NavLink href="/venue" onClick={() => setOpen(false)}>สถานที่</NavLink>
             <NavLink href="/contacts" onClick={() => setOpen(false)}>ติดต่อ</NavLink>

@@ -1,11 +1,11 @@
 {
   "band": {
-    "isPublished": false,
+    "isPublished": true,
     "expectedAnnouncement": "๖ กันยายน ๒๕๖๙ หลังเวลา ๑๖.๓๐ น.",
     "message": "ผลการประกวดประเภทวงจะเผยแพร่หลังเสร็จสิ้นการแข่งขันและพิธีมอบรางวัล"
   },
   "solo": {
-    "isPublished": false,
+    "isPublished": true,
     "expectedAnnouncement": "๕ กันยายน ๒๕๖๙ หลังเวลา ๑๗.๐๐ น.",
     "message": "ผลการประกวดประเภทเดี่ยวจะเผยแพร่หลังเสร็จสิ้นการแข่งขัน"
   },
