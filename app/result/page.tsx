@@ -59,9 +59,58 @@ function AwardRow({ entry }: { entry: ResultEntry }) {
 function OutstandingRow({ award }: { award: NonNullable<Competition["outstandingAwards"]>[number] }) {
   return (
     <div className="border-t border-white/10 py-3">
-      <p className="font-semibold text-ci-gold">{award.instrument}</p>
-      <p className="text-white">{award.name}</p>
-      <p className="text-sm text-white/60">{award.school}</p>
+      <p className="font-semibold text-ci-gold">{award.name}</p>
+      <p className="mt-1 text-sm text-white/65">{award.school}</p>
+    </div>
+  );
+}
+
+function BandResults({ competition }: { competition: Competition }) {
+  return (
+    <div className="mx-auto max-w-3xl">
+      <div className="mb-3 flex items-center gap-2 text-lg font-bold text-ci-gold">
+        <FontAwesomeIcon icon={faTrophy} />
+        รายชื่อวงที่ได้รับรางวัล
+      </div>
+      {competition.results.map((entry) => <AwardRow key={entry.name} entry={entry} />)}
+    </div>
+  );
+}
+
+function OutstandingAwards({ competition }: { competition: Competition }) {
+  const [selectedInstrument, setSelectedInstrument] = useState("");
+  const groupedAwards = (competition.outstandingAwards ?? []).reduce<Record<string, NonNullable<Competition["outstandingAwards"]>>>(
+    (groups, award) => {
+      const instrument = award.instrument.replace(/\s*ดีเด่น$/, "");
+      groups[instrument] = [...(groups[instrument] ?? []), award];
+      return groups;
+    },
+    {}
+  );
+  const instruments = Object.keys(groupedAwards);
+  const activeInstrument = selectedInstrument && groupedAwards[selectedInstrument]
+    ? selectedInstrument
+    : instruments[0];
+  const selectedAwards = activeInstrument ? groupedAwards[activeInstrument] : [];
+
+  return (
+    <div className="mx-auto max-w-3xl">
+      <label htmlFor="instrument" className="mb-2 block font-semibold text-ci-gold">เลือกเครื่องดนตรี</label>
+      <select
+        id="instrument"
+        value={activeInstrument ?? ""}
+        onChange={(event) => setSelectedInstrument(event.target.value)}
+        className="w-full rounded-lg border border-white/15 bg-ci-plum px-4 py-3 text-white outline-none focus:border-ci-gold"
+      >
+        {instruments.map((instrument) => <option key={instrument} value={instrument}>{instrument}</option>)}
+      </select>
+
+      {activeInstrument && (
+        <section className="mt-6">
+          <h3 className="mb-1 border-b border-white/10 pb-3 font-bold text-ci-gold">{activeInstrument}</h3>
+          <div>{selectedAwards.map((award) => <OutstandingRow key={`${award.instrument}-${award.name}`} award={award} />)}</div>
+        </section>
+      )}
     </div>
   );
 }
@@ -76,7 +125,9 @@ export default function ResultPage() {
   const availableLevels = levels.filter((level) => competitions.some((competition) => competition.level === level));
   const isPublished = publishedStatus[resultType].isPublished;
   const levelCompetitions = useMemo(
-    () => competitions.filter((competition) => competition.level === selectedLevel),
+    () => competitions
+      .filter((competition) => competition.level === selectedLevel)
+      .sort((first, second) => Number(second.title === "วงเครื่องสายเครื่องเดี่ยว") - Number(first.title === "วงเครื่องสายเครื่องเดี่ยว")),
     [competitions, selectedLevel]
   );
   const activeCompetition = levelCompetitions.find((competition) => competition.title === selectedCompetition) ?? levelCompetitions[0];
@@ -132,9 +183,7 @@ export default function ResultPage() {
               <button onClick={() => setBandView("results")} className={`rounded-lg border p-3 text-left font-semibold transition ${bandView === "results" ? "border-ci-gold bg-ci-gold/20 text-ci-gold" : "border-white/10 bg-white/5 text-white hover:border-ci-gold/50"}`}><FontAwesomeIcon icon={faMedal} className="mr-2" />ผลการแข่งขัน</button>
               <button onClick={() => setBandView("outstanding")} className={`rounded-lg border p-3 text-left font-semibold transition ${bandView === "outstanding" ? "border-ci-gold bg-ci-gold/20 text-ci-gold" : "border-white/10 bg-white/5 text-white hover:border-ci-gold/50"}`}><FontAwesomeIcon icon={faAward} className="mr-2" />รางวัลเครื่องดนตรีดีเด่น</button>
             </div>
-            {bandView === "results" ? <>
-            <div className="space-y-2">{activeCompetition.results.map((entry) => <div key={entry.name} className="rounded-lg border border-white/10 bg-white/5 p-4"><div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"><div><strong className="block text-white">{entry.name}</strong>{entry.school && <span className="block text-sm text-white/60">{entry.school}</span>}</div><div className="text-left sm:text-right"><span className="block text-ci-gold">{entry.prize}</span>{entry.medal && <span className="text-sm text-white/60">{entry.medal}</span>}</div></div></div>)}</div>
-          </> : <div>{activeCompetition.outstandingAwards?.map((award) => <OutstandingRow key={`${award.instrument}-${award.name}`} award={award} />)}</div>}
+            {bandView === "results" ? <BandResults competition={activeCompetition} /> : <OutstandingAwards key={activeCompetition.title} competition={activeCompetition} />}
           </> : <div><div className="mb-4 flex items-center gap-2 text-lg font-bold text-ci-gold"><FontAwesomeIcon icon={faMedal} />รายชื่อผู้ได้รับรางวัล</div>{activeCompetition.results.map((entry) => <AwardRow key={entry.name} entry={entry} />)}</div>}
         </div>}
         </>}

@@ -8,7 +8,7 @@ export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="bg-ci-purple text-white shadow-md sticky top-0 z-50">
+    <header className="site-header text-white sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
@@ -63,7 +63,7 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {open && (
-        <div className="md:hidden bg-ci-plum/95 backdrop-blur-sm slide-up">
+        <div className="site-mobile-nav md:hidden backdrop-blur-sm slide-up">
           <div className="flex flex-col px-4 py-4 gap-3 text-sm font-kku">
             <NavLink href="/" onClick={() => setOpen(false)}>หน้าแรก</NavLink>
             <NavLink href="/schedule" onClick={() => setOpen(false)}>กำหนดการ</NavLink>

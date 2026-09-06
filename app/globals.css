@@ -151,12 +151,7 @@
     font-family: 'KKU 2555', 'Sarabun', sans-serif;
     /* Two controlled blooms of brand color on a near-black field,
        instead of a gradient wash across the whole viewport. */
-    background:
-      radial-gradient(ellipse 1100px 640px at 50% -12%, rgba(117, 47, 119, 0.4), transparent 60%),
-      radial-gradient(ellipse 900px 520px at 100% 110%, rgba(75, 23, 76, 0.32), transparent 62%),
-      var(--surface-0);
-    background-attachment: fixed;
-    background-color: var(--surface-0);
+    background: var(--ci-plum);
     color: var(--text-primary);
     line-height: 1.6;
     @apply antialiased;
@@ -337,7 +332,7 @@
      the panel a sense of being a lit, physical surface rather than
      a flat rectangle with a box-shadow applied. */
   .card {
-    background: var(--surface-1);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     padding: var(--space-6);
@@ -450,7 +445,7 @@
     padding: 0.75rem 1rem;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-subtle);
-    background: var(--surface-1);
+    background: rgba(28, 18, 38, 0.94);
     color: var(--text-primary);
     font-family: 'Sarabun', sans-serif;
     font-size: 1rem;
@@ -475,8 +470,20 @@
   }
 
   select option {
-    color: var(--ci-black);
-    background: var(--ci-white);
+    color: var(--text-primary);
+    background: var(--surface-1);
+  }
+
+  .site-header {
+    background: rgba(75, 23, 76, 0.94);
+    border-bottom: 1px solid var(--border-hairline);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(14px);
+  }
+
+  .site-mobile-nav {
+    background: rgba(75, 23, 76, 0.98);
+    border-top: 1px solid var(--border-subtle);
   }
 
   .form-group {

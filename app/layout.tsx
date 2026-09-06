@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/ci/favicon.png" />
         <meta name="theme-color" content="#4b174c" />
       </head>
-      <body className="min-h-screen flex flex-col bg-gradient-to-b from-ci-purple to-ci-plum text-white font-sao">
+      <body className="min-h-screen flex flex-col text-white font-sao">
         <Header />
         <main className="flex-1 max-w-6xl mx-auto px-4 py-8">{children}</main>
         <Footer />
