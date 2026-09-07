@@ -1,8 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAward, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faAward, faDownload, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
-const certificateFolderUrl =
-  "https://drive.google.com/drive/folders/19DxR8R3l9rFR655HisQLOfttr9bAVNnc?usp=sharing";
+const certificateFolders = [
+  {
+    level: "ระดับประถมศึกษา",
+    description: "เกียรติบัตรสำหรับผู้เข้าร่วมการประกวดระดับประถมศึกษา",
+    url: "https://drive.google.com/drive/folders/1P80ED1FJUcuAhu-Srhtfy8ySEmuLLEQV",
+  },
+  {
+    level: "ระดับมัธยมศึกษา",
+    description: "เกียรติบัตรสำหรับผู้เข้าร่วมการประกวดระดับมัธยมศึกษา",
+    url: "https://drive.google.com/drive/folders/1ibN_wCxjPhc3O9wxYSX4GGYtDljBc-Uj",
+  },
+];
 
 export default function CertificatePage() {
   return (
@@ -15,19 +25,26 @@ export default function CertificatePage() {
         </p>
       </header>
 
-      <section className="card border border-ci-gold/30 bg-black/20 p-6 text-center backdrop-blur-sm sm:p-10">
-        <p className="text-white/80">
-          สามารถดาวน์โหลดเกียรติบัตรได้จากโฟลเดอร์ Google Drive ของการประกวด
-        </p>
-        <a
-          href={certificateFolderUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary mt-6 inline-flex items-center justify-center gap-2"
-        >
-          <FontAwesomeIcon icon={faDownload} />
-          ดาวน์โหลดเกียรติบัตร
-        </a>
+      <section className="grid gap-6 md:grid-cols-2">
+        {certificateFolders.map((certificate) => (
+          <article
+            key={certificate.level}
+            className="card border border-ci-gold/30 bg-black/20 p-6 text-center backdrop-blur-sm sm:p-8"
+          >
+            <FontAwesomeIcon icon={faGraduationCap} className="mb-4 text-4xl text-ci-gold" />
+            <h2 className="text-2xl font-bold text-ci-gold font-sao">{certificate.level}</h2>
+            <p className="mt-3 text-white/80">{certificate.description}</p>
+            <a
+              href={certificate.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary mt-6 inline-flex items-center justify-center gap-2"
+            >
+              <FontAwesomeIcon icon={faDownload} />
+              ดาวน์โหลดเกียรติบัตร
+            </a>
+          </article>
+        ))}
       </section>
     </div>
   );

@@ -133,9 +133,8 @@ export default function Home() {
     {
       title: "ดาวน์โหลดเกียรติบัตรการประกวด",
       date: "ประกาศล่าสุด",
-      description: "ดาวน์โหลดเกียรติบัตรของผู้เข้าร่วมการประกวดได้จากโฟลเดอร์ Google Drive",
-      href: "https://drive.google.com/drive/folders/19DxR8R3l9rFR655HisQLOfttr9bAVNnc?usp=sharing",
-      external: true
+      description: "เลือกดาวน์โหลดเกียรติบัตรของผู้เข้าร่วมการประกวดได้ตามระดับการศึกษา",
+      href: "/certificate"
     }
   ];
 
@@ -226,11 +225,9 @@ export default function Home() {
               <p className="text-white/80 flex-grow">{item.description}</p>
               <a
                 href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
                 className="btn btn-secondary mt-4 self-start inline-flex items-center gap-2"
               >
-                {item.external && <FontAwesomeIcon icon={faAward} />}
+                {item.href === "/certificate" && <FontAwesomeIcon icon={faAward} />}
                 ดูรายละเอียด
               </a>
             </div>
