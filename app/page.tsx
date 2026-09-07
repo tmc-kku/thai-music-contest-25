@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock, faCalendarAlt, faPlay, faMapMarkerAlt, faBullhorn } from '@fortawesome/free-solid-svg-icons'
+import { faClock, faCalendarAlt, faPlay, faMapMarkerAlt, faBullhorn, faAward } from '@fortawesome/free-solid-svg-icons'
 
 // รูปภาพสไลด์ (วางไฟล์ใน public/ci/gallery/)
 const images = [
@@ -129,6 +129,13 @@ export default function Home() {
       date: "6 กันยายน 2569",
       description: "การจับสลากลำดับการแข่งขันสำหรับวงดนตรี จะมีขึ้นในวันที่ 6 กันยายน 2569 เวลา 08.45 น. ณ โรงละครคณะศิลปกรรมศาสตร์",
       href: "/band"
+    },
+    {
+      title: "ดาวน์โหลดเกียรติบัตรการประกวด",
+      date: "ประกาศล่าสุด",
+      description: "ดาวน์โหลดเกียรติบัตรของผู้เข้าร่วมการประกวดได้จากโฟลเดอร์ Google Drive",
+      href: "https://drive.google.com/drive/folders/19DxR8R3l9rFR655HisQLOfttr9bAVNnc?usp=sharing",
+      external: true
     }
   ];
 
@@ -217,7 +224,13 @@ export default function Home() {
                 <p className="text-xs text-white/50 mt-1">อัปเดตล่าสุด: {item.date}</p>
               </div>
               <p className="text-white/80 flex-grow">{item.description}</p>
-              <a href={item.href} className="btn btn-secondary mt-4 self-start">
+              <a
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="btn btn-secondary mt-4 self-start inline-flex items-center gap-2"
+              >
+                {item.external && <FontAwesomeIcon icon={faAward} />}
                 ดูรายละเอียด
               </a>
             </div>
